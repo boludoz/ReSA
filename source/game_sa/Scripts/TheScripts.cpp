@@ -1052,9 +1052,7 @@ CRunningScript* CTheScripts::StartNewScript(uint8* startIP, uint16 index) {
 
     script->RemoveScriptFromList(&pIdleScripts);
     script->Init();
-    if (startIP) { // NOTSA/BUGFIX: `IP` is initialized to null already, so no need to set it again (As it causes an assert)
-        script->SetCurrentIp(startIP);
-    }
+    script->SetCurrentIp(startIP);
     script->AddScriptToList(&pActiveScripts);
     script->SetActive(true);
 
