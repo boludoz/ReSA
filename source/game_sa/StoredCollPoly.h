@@ -12,6 +12,6 @@ struct CStoredCollPoly {
     CVector      verts[3]{}; // triangle vertices
     bool         valid{};
     char         _pad[3];
-    tColLighting ligthing{};
+    tColLighting ligthing{}; // TOOD: Fix typo to lighting
 };
 VALIDATE_SIZE(CStoredCollPoly, 0x2C);

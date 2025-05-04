@@ -35,6 +35,12 @@ class CHeli;
 class CPedGroup;
 class CVehicleAnimGroup;
 
+enum eStoredColsPoly : int32 {
+    COL_FRONT = 0,
+    COL_REAR = 1,
+    COL_TOTAL
+};
+
 enum eCarWeapon : uint8 {
     CAR_WEAPON_NOT_USED       = 0,
     CAR_WEAPON_HEAVY_GUN      = 1,
@@ -388,8 +394,7 @@ public:
     char            m_nCarHornTimer; // car horn related
     eComedyControlState m_comedyControlState;
     char            m_nHasslePosId;
-    CStoredCollPoly m_FrontCollPoly;          // poly which is under front part of car
-    CStoredCollPoly m_RearCollPoly;           // poly which is under rear part of car
+    CStoredCollPoly m_StoredCollPolys[COL_TOTAL]; // 0 - COL_FRONT | 1 - COL_REAR
     tColLighting    m_anCollisionLighting[4]; // left front, left rear, right front, right rear
     FxSystem_c*     m_pOverheatParticle;
     FxSystem_c*     m_pFireParticle;
